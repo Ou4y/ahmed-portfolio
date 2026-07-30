@@ -1,5 +1,7 @@
+import Footer from './components/layout/Footer.jsx'
 import Navbar from './components/layout/Navbar.jsx'
 import About from './components/sections/About.jsx'
+import Contact from './components/sections/Contact.jsx'
 import Experience from './components/sections/Experience.jsx'
 import Expertise from './components/sections/Expertise.jsx'
 import FAQ from './components/sections/FAQ.jsx'
@@ -28,7 +30,9 @@ function App() {
         <Process language={language} t={t} />
         <Insights language={language} t={t} />
         <FAQ language={language} t={t} />
+        <Contact t={t} />
       </main>
+      <Footer t={t} />
     </>
   )
 }

@@ -101,6 +101,8 @@ const translations = {
       whatsapp: 'WhatsApp',
       phone: 'Phone',
       email: 'Email',
+      whatsappMessage:
+        'Hello Ahmed, I would like to request a legal consultation. My name is:',
       detailsPending:
         'Direct contact details will appear here once they are confirmed.',
       responseNote:
@@ -223,6 +225,8 @@ const translations = {
       whatsapp: 'واتساب',
       phone: 'الهاتف',
       email: 'البريد الإلكتروني',
+      whatsappMessage:
+        'مرحبًا أستاذ أحمد، أرغب في طلب استشارة قانونية. اسمي:',
       detailsPending: 'ستظهر بيانات التواصل المباشر هنا بعد تأكيدها.',
       responseNote:
         'الرسالة الأولية مخصصة للتنسيق وفهم السياق فقط، ولا تنشئ علاقة محامٍ وموكل.',
