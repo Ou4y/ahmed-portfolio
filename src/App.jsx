@@ -1,5 +1,5 @@
+import Navbar from './components/layout/Navbar.jsx'
 import Container from './components/ui/Container.jsx'
-import LanguageSwitch from './components/ui/LanguageSwitch.jsx'
 import SectionTitle from './components/ui/SectionTitle.jsx'
 import SkipLink from './components/ui/SkipLink.jsx'
 import useLanguage from './hooks/useLanguage.js'
@@ -10,17 +10,17 @@ function App() {
   return (
     <>
       <SkipLink>{t.accessibility.skipToContent}</SkipLink>
+      <Navbar
+        language={language}
+        onToggleLanguage={toggleLanguage}
+        t={t}
+      />
       <main id="main-content">
-        <section className="flex min-h-screen items-center bg-cream py-24">
+        <section
+          className="flex min-h-[calc(100svh-4.75rem)] items-center bg-cream py-24"
+          id="home"
+        >
           <Container>
-            <div className="mb-10 flex justify-end">
-              <LanguageSwitch
-                label={t.language.switchLabel}
-                language={language}
-                nextLanguage={t.language.nextLanguage}
-                onToggle={toggleLanguage}
-              />
-            </div>
             <SectionTitle
               eyebrow={t.hero.eyebrow}
               title={t.hero.title}

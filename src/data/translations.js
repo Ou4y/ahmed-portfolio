@@ -16,6 +16,7 @@ const translations = {
       contact: 'Contact',
       menuOpen: 'Open navigation menu',
       menuClose: 'Close navigation menu',
+      navigationLabel: 'Main navigation',
       consultation: 'Book a consultation',
     },
     hero: {
@@ -137,6 +138,7 @@ const translations = {
       contact: 'تواصل',
       menuOpen: 'فتح قائمة التنقل',
       menuClose: 'إغلاق قائمة التنقل',
+      navigationLabel: 'التنقل الرئيسي',
       consultation: 'احجز استشارة',
     },
     hero: {
