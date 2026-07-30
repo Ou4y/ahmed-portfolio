@@ -8,7 +8,7 @@ function Reveal({
   children,
 }) {
   const shouldReduceMotion = useReducedMotion()
-  const MotionComponent = motion.create(as)
+  const MotionComponent = motion[as] ?? motion.div
 
   return (
     <MotionComponent
