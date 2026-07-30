@@ -1,5 +1,6 @@
 import Footer from './components/layout/Footer.jsx'
 import Navbar from './components/layout/Navbar.jsx'
+import SEO from './components/layout/SEO.jsx'
 import About from './components/sections/About.jsx'
 import Contact from './components/sections/Contact.jsx'
 import Experience from './components/sections/Experience.jsx'
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+      <SEO language={language} t={t} />
       <SkipLink>{t.accessibility.skipToContent}</SkipLink>
       <Navbar
         language={language}

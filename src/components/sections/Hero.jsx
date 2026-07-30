@@ -162,7 +162,7 @@ function Hero({ t }) {
         </motion.div>
 
         <a
-          aria-label={t.hero.secondaryCta}
+          aria-label={t.nav.about}
           className="absolute end-10 bottom-28 hidden size-11 animate-bounce place-items-center rounded-full border border-white/12 text-white/40 transition hover:border-gold hover:text-gold lg:grid motion-reduce:animate-none"
           href="#about"
         >
