@@ -8,9 +8,9 @@ const translations = {
       skipToContent: 'Skip to main content',
     },
     intro: {
-      subtitle: 'Corporate Lawyer & Legal Adviser',
+      subtitle: 'Corporate Lawyer & Legal Advisor',
       announcement:
-        'Ahmed Raafat — Corporate Lawyer and Legal Adviser. The website is opening.',
+        'Ahmed Raafat — Corporate Lawyer and Legal Advisor. The website is opening.',
     },
     nav: {
       home: 'Home',
@@ -25,35 +25,35 @@ const translations = {
       consultation: 'Book a consultation',
     },
     hero: {
-      eyebrow: 'Corporate Legal Adviser in Egypt',
+      eyebrow: 'Corporate Legal Advisor in Egypt',
       title: 'Ahmed Raafat',
-      role: 'Corporate Lawyer & Legal Adviser',
+      role: 'Corporate Lawyer & Legal Advisor',
       description:
         'Strategic legal solutions for businesses, startups, investors, and multinational companies, backed by expertise in Egyptian commercial and corporate law.',
       primaryCta: 'Book a Consultation',
       secondaryCta: 'Explore Practice Areas',
-      imageAlt: 'Ahmed Raafat, Corporate Lawyer and Legal Adviser',
+      imageAlt: 'Ahmed Raafat, Corporate Lawyer and Legal Advisor',
       portraitLabel: 'Professional profile',
       experienceNumber: '10',
       experienceLabel: 'years in the legal field',
       trustItems: [
         '10 Years Legal Experience',
         'Corporate & Commercial Law',
-        'Legal Adviser for Businesses',
-        'Corporate Lawyer & Legal Adviser',
+        'Legal Advisor for Businesses',
+        'Corporate Lawyer & Legal Advisor',
       ],
     },
     about: {
       eyebrow: 'About',
       title: 'Strategic legal support for businesses and investors.',
       paragraphs: [
-        'Corporate Lawyer and Legal Adviser with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
+        'Corporate Lawyer and Legal Advisor with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
         'Experienced in company formation, corporate governance, commercial contracts, mergers and acquisitions, legal due diligence, labor law compliance, regulatory matters, dispute prevention, and risk management.',
         'Committed to delivering practical legal advice that supports business growth while ensuring compliance with Egyptian laws and international best practices.',
       ],
       yearsLabel: 'Years of legal experience',
       roleLabel: 'Professional experience',
-      roleValue: 'Corporate Lawyer & Legal Adviser',
+      roleValue: 'Corporate Lawyer & Legal Advisor',
       focusLabel: 'Core expertise',
       focusValue: 'Egyptian commercial & corporate law',
     },
@@ -67,7 +67,7 @@ const translations = {
     },
     experience: {
       eyebrow: 'Experience highlight',
-      title: 'Corporate Lawyer & Legal Adviser',
+      title: 'Corporate Lawyer & Legal Advisor',
       description:
         'Ahmed’s corporate legal practice includes experience supporting business operations, reviewing legal documents, advising on commercial matters, and helping businesses manage legal and regulatory risk.',
       points: [
@@ -117,7 +117,7 @@ const translations = {
         'An initial message is for scheduling and context only. It does not create an attorney-client relationship.',
     },
     footer: {
-      role: 'Corporate Lawyer & Legal Adviser',
+      role: 'Corporate Lawyer & Legal Advisor',
       navigationLabel: 'Footer navigation',
       disclaimerTitle: 'Legal disclaimer',
       disclaimer:
@@ -126,11 +126,11 @@ const translations = {
       backToTop: 'Back to top',
     },
     seo: {
-      title: 'Ahmed Raafat | Corporate Lawyer & Legal Adviser in Egypt',
+      title: 'Ahmed Raafat | Corporate Lawyer & Legal Advisor in Egypt',
       description:
-        'Ahmed Raafat is a Corporate Lawyer and Legal Adviser with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
+        'Ahmed Raafat is a Corporate Lawyer and Legal Advisor with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
       imageAlt:
-        'Ahmed Raafat signature logo, Corporate Lawyer and Legal Adviser',
+        'Ahmed Raafat signature logo, Corporate Lawyer and Legal Advisor',
     },
   },
   ar: {
