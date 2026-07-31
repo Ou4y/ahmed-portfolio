@@ -719,3 +719,156 @@ Before the public launch:
 6. Ask Ahmed to review the Arabic and English legal wording before publication.
 
 Future features such as full articles, analytics, a booking provider, or a CMS should be added only after a real requirement justifies their complexity.
+
+## Signature Asset, Background Removal, and 4-Second Intro Animation
+
+### 1. Original asset handling
+
+The supplied JPEG is preserved byte-for-byte as
+`public/images/sign-ahmed-original.jpeg`. Keeping an untouched source matters:
+every later export can be rebuilt, compared, or improved without repeatedly
+editing an already compressed derivative.
+
+The raw JPEG is not used directly in the interface because JPEG has no alpha
+channel. Its near-white pixels would therefore render as a large rectangular
+box on navy, cream, or any future branded surface.
+
+### 2. Background removal and the transparent logo
+
+`scripts/process_signature_assets.py` estimates the original background from
+the image edge, converts the difference from that matte into an alpha channel,
+and mathematically removes the white color mixed into antialiased edge pixels.
+This final “unmatting” step is what prevents a thin white halo around black
+script strokes and gold details.
+
+The processed image is trimmed only to transparent padding. No signature
+stroke, scale detail, divider, role text, or service line is cropped. The
+transparent master is exported as a lossless RGBA PNG:
+
+```text
+public/images/sign-ahmed-transparent.png
+```
+
+Transparent PNG is a strong brand format because it preserves soft,
+antialiased edges and can be placed over many backgrounds. SVG is ideal for
+genuinely vector artwork because it scales from a watch face to a billboard
+without pixelation. This project does not pretend the supplied JPEG is a true
+vector source: `sign-ahmed-vector.svg` is documented as a hybrid wrapper that
+keeps the faithful PNG and adds scalable SVG depth and shadow filters.
+
+### 3. Full lockup versus compact mark
+
+The full artwork includes fine English descriptor text. Shrinking that entire
+lockup into a mobile navbar would make the small text unreadable. The pipeline
+therefore exports two safe compositions:
+
+- `sign-ahmed-transparent.png` and `sign-ahmed-3d.png` retain the full lockup.
+- `sign-ahmed-mark.png` and `sign-ahmed-3d-mark.png` retain the handwritten
+  name, sweeping underline, and legal scale icon for compact placements.
+
+The intro and navbar use the compact mark. The footer and social preview have
+enough space for the full lockup. The hero uses the compact mark as a subtle
+brand detail without replacing its accessible, translated `h1`.
+
+### 4. Premium 3D vector-style treatment
+
+The 3D treatment is deliberately restrained: a shallow metallic edge, small
+bevel highlight, dark dimensional offset, and soft shadow. It keeps the legal
+brand calm and authoritative. Heavy perspective, spinning, neon glow, or
+cartoon depth would compete with the signature and feel inappropriate for a
+corporate lawyer.
+
+The transparent master remains the fidelity reference. The 3D version is a
+presentation derivative for dark navy surfaces, where the original black
+script alone would have insufficient contrast.
+
+### 5. How the React intro overlay works
+
+`App.jsx` keeps the complete website mounted and renders `SignatureIntro`
+above it as a fixed overlay:
+
+```jsx
+const [showIntro, setShowIntro] = useState(getInitialIntroVisibility)
+
+return (
+  <>
+    {showIntro && <SignatureIntro language={language} t={t} />}
+    <div inert={showIntro ? true : undefined}>
+      <Navbar />
+      <main>...</main>
+      <Footer />
+    </div>
+  </>
+)
+```
+
+`useState` is the right tool because intro visibility changes during the
+visit, and React must render a different interface when it changes. A guarded
+lazy initializer checks `sessionStorage`, so the intro appears only once in a
+browser session instead of replaying after every same-session refresh.
+
+The site stays mounted to avoid layout resets. While the overlay is visible,
+the site wrapper is `inert`, hidden from assistive technology, and unable to
+receive accidental pointer or keyboard interaction.
+
+### 6. Why `useEffect`, the timer, and cleanup matter
+
+Showing the intro starts work outside React’s render calculation: a timer,
+temporary body scroll locking, and a browser-session storage update. That is
+why the logic belongs in `useEffect`.
+
+The normal timer lasts 4,000 milliseconds. When it completes,
+`setShowIntro(false)` removes the overlay and makes the already-mounted site
+fully interactive.
+
+The effect returns cleanup that calls `clearTimeout` and restores the exact
+previous body styles. Cleanup prevents an old timer from updating state after
+the component lifecycle changes, avoids duplicate timers during React Strict
+Mode development checks, and ensures scroll is never left locked.
+
+### 7. Animation timing
+
+The four-second sequence is divided into calm overlapping phases:
+
+1. `0.0–0.6s`: the cream field and subtle legal grid settle in.
+2. `0.6–1.7s`: thin gold lines and the central diamond reveal.
+3. `1.0–2.6s`: the signature reveals from left to right with a clipping mask.
+4. `2.4–3.3s`: the live translated professional title fades upward.
+5. `3.3–4.0s`: the complete overlay fades away to reveal the website.
+
+Overlapping phases keep the sequence fluid while the total remains four
+seconds. The English signature artwork always reveals left-to-right, even when
+the live subtitle and the rest of the page use Arabic RTL direction.
+
+### 8. Reduced motion, accessibility, and interaction safety
+
+`MotionConfig reducedMotion="user"` and `useReducedMotion()` respect
+`prefers-reduced-motion`. For those visitors, the draw, slide, and scale
+effects are skipped and the static identity is shown for roughly 550
+milliseconds before the site opens. A fixed four-second static screen would
+respect animation technically but still create an unnecessary accessibility
+delay.
+
+The overlay exposes one concise translated status message to assistive
+technology. Its decorative image has an empty alternative, preventing the same
+brand wording from being announced twice. Explicit image dimensions avoid
+layout shift, and the compact intro asset is preloaded so the first visit does
+not begin with an empty frame.
+
+### 9. Reuse and performance
+
+All asset URLs are centralized in `src/data/site.js`, and
+`SignatureLogo.jsx` selects the correct full or compact treatment. This avoids
+hard-coded paths and keeps sizing, loading priority, dark-surface filtering,
+and intrinsic dimensions consistent.
+
+The compact intro asset is preloaded on every page load so a genuine
+first-session intro can begin without an empty frame. On later loads in the
+same session, the browser normally reuses its cached copy even though the intro
+is skipped. Navbar, hero, and footer reuse the same optimized files; no canvas
+loop or video is required.
+
+The social-preview composition is a static 1200×630 PNG, so it never depends on
+the React animation. Runtime Helmet metadata points to it, but reliable public
+link unfurls still need static absolute image tags after the production domain
+is confirmed.

@@ -1,6 +1,7 @@
 import { ArrowDownRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { siteConfig } from '../../data/site.js'
+import SignatureLogo from '../branding/SignatureLogo.jsx'
 import Button from '../ui/Button.jsx'
 import Container from '../ui/Container.jsx'
 import AbstractLegalPattern from '../vectors/AbstractLegalPattern.jsx'
@@ -32,6 +33,12 @@ function Hero({ t }) {
             initial={initialState}
             transition={{ staggerChildren: shouldReduceMotion ? 0 : 0.09 }}
           >
+            <motion.div
+              className="mb-7 w-[min(76vw,18rem)] opacity-90"
+              variants={entrance}
+            >
+              <SignatureLogo tone="dark" />
+            </motion.div>
             <motion.p
               className="mb-5 flex items-center gap-3 text-xs font-extrabold tracking-[0.2em] text-gold-light uppercase before:h-px before:w-10 before:bg-gold rtl:tracking-normal"
               variants={entrance}

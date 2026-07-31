@@ -7,6 +7,11 @@ const translations = {
     accessibility: {
       skipToContent: 'Skip to main content',
     },
+    intro: {
+      subtitle: 'Corporate Lawyer & Legal Adviser',
+      announcement:
+        'Ahmed Raafat — Corporate Lawyer and Legal Adviser. The website is opening.',
+    },
     nav: {
       home: 'Home',
       about: 'About',
@@ -124,6 +129,8 @@ const translations = {
       title: 'Ahmed Raafat | Corporate Lawyer & Legal Adviser in Egypt',
       description:
         'Ahmed Raafat is a Corporate Lawyer and Legal Adviser with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
+      imageAlt:
+        'Ahmed Raafat signature logo, Corporate Lawyer and Legal Adviser',
     },
   },
   ar: {
@@ -133,6 +140,11 @@ const translations = {
     },
     accessibility: {
       skipToContent: 'انتقل إلى المحتوى الرئيسي',
+    },
+    intro: {
+      subtitle: 'محامٍ ومستشار قانوني للشركات',
+      announcement:
+        'أحمد رأفت — محامٍ ومستشار قانوني للشركات. يتم الآن فتح الموقع.',
     },
     nav: {
       home: 'الرئيسية',
@@ -250,6 +262,7 @@ const translations = {
       title: 'أحمد رأفت | محامٍ ومستشار قانوني للشركات في مصر',
       description:
         'أحمد رأفت محامٍ ومستشار قانوني متخصص في القانون التجاري وقانون الشركات المصري، يقدم حلولًا قانونية استراتيجية للشركات والمستثمرين والشركات الناشئة.',
+      imageAlt: 'شعار توقيع أحمد رأفت، محامٍ ومستشار قانوني للشركات',
     },
   },
 }

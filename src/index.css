@@ -63,6 +63,7 @@
     min-width: 320px;
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
+    scrollbar-gutter: stable;
   }
 
   html[lang="ar"] {
@@ -131,6 +132,38 @@
       linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
       linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
     background-size: 64px 64px;
+  }
+}
+
+@layer components {
+  .signature-logo {
+    display: block;
+    line-height: 0;
+  }
+
+  .signature-logo--dark img {
+    filter:
+      drop-shadow(0 0 0.75px rgb(248 245 239 / 88%))
+      drop-shadow(0 4px 10px rgb(201 162 39 / 22%));
+  }
+
+  .signature-logo--light img {
+    filter: drop-shadow(0 8px 18px rgb(7 24 39 / 10%));
+  }
+
+  .signature-intro-grid {
+    background-image:
+      linear-gradient(rgb(11 31 51 / 3.5%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(11 31 51 / 3.5%) 1px, transparent 1px),
+      radial-gradient(
+        circle at center,
+        rgb(201 162 39 / 9%),
+        transparent 56%
+      );
+    background-size:
+      72px 72px,
+      72px 72px,
+      100% 100%;
   }
 }
 

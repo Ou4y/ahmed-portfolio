@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { Menu, Scale, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { navigationItems } from '../../data/site.js'
+import SignatureLogo from '../branding/SignatureLogo.jsx'
 import Button from '../ui/Button.jsx'
 import Container from '../ui/Container.jsx'
 import LanguageSwitch from '../ui/LanguageSwitch.jsx'
@@ -38,25 +39,18 @@ function Navbar({ language, t, onToggleLanguage }) {
       <Container>
         <nav
           aria-label={t.nav.navigationLabel}
-          className="flex min-h-[4.75rem] items-center justify-between gap-5"
+          className="flex min-h-[4.75rem] items-center justify-between gap-2 sm:gap-5"
         >
           <a
             aria-label={`${t.hero.title} — ${t.hero.role}`}
-            className="group flex min-w-0 items-center gap-3"
+            className="group flex min-w-0 shrink items-center"
             href="#home"
             onClick={closeMenu}
           >
-            <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-gold/40 bg-gold/10 text-gold transition group-hover:bg-gold group-hover:text-navy-deep">
-              <Scale aria-hidden="true" className="size-5" strokeWidth={1.6} />
-            </span>
-            <span className="min-w-0">
-              <span className="font-display block truncate text-xl leading-none font-semibold text-white sm:text-2xl">
-                {t.hero.title}
-              </span>
-              <span className="mt-1 hidden truncate text-[0.62rem] font-bold tracking-[0.12em] text-white/50 uppercase sm:block rtl:tracking-normal">
-                {t.footer.role}
-              </span>
-            </span>
+            <SignatureLogo
+              className="w-26 transition duration-300 group-hover:brightness-110 sm:w-36"
+              tone="dark"
+            />
           </a>
 
           <div className="hidden items-center gap-1 lg:flex">

@@ -13,6 +13,9 @@ The site is a fully static React frontend. It presents strategic legal support f
 - Sticky desktop and mobile navigation
 - Smooth section navigation without React Router
 - Supplied professional portrait of Ahmed Raafat
+- Supplied signature branding with transparent and premium 3D treatments
+- Four-second first-session signature intro with reduced-motion support
+- Signature branding reused in the navbar, hero, footer, and social-preview asset
 - Custom legal line art and a navy, cream, and gold design system
 - Restrained Motion animations with reduced-motion support
 - Data-driven practice areas, process, insight, and FAQ content
@@ -130,6 +133,51 @@ public/images/ahmed-raafat.jpeg
 ```
 
 It is loaded eagerly in the first viewport with explicit dimensions, a fixed aspect-ratio frame, and `object-fit: cover` so it is not stretched.
+
+## Signature Brand Assets
+
+The client-supplied JPEG is preserved unchanged at:
+
+```text
+public/images/sign-ahmed-original.jpeg
+```
+
+Production-ready derivatives live beside it:
+
+```text
+public/images/sign-ahmed-transparent.png
+public/images/sign-ahmed-mark.png
+public/images/sign-ahmed-3d.png
+public/images/sign-ahmed-3d-mark.png
+public/images/sign-ahmed-vector.svg
+public/images/ahmed-raafat-og.png
+```
+
+The transparent PNG is the faithful master for light backgrounds. The 3D files
+add restrained metallic depth and edge contrast for the navy brand surfaces.
+The SVG is an explicitly hybrid, raster-backed filter treatment rather than a
+claimed hand-traced vector. `scripts/process_signature_assets.py` contains the
+repeatable deterministic matte-removal, trimming, SVG-wrapper, and social-card
+finalization steps.
+
+The script requires Python 3, Pillow, and NumPy; SciPy is optional and only
+improves removal of isolated JPEG noise. It accepts the original JPEG and an
+already-transparent 3D treatment produced by the visual-generation stage:
+
+```bash
+python3 scripts/process_signature_assets.py \
+  --source public/images/sign-ahmed-original.jpeg \
+  --three-d-alpha /absolute/path/to/sign-ahmed-3d-alpha.png
+```
+
+The generated 1200×630 social image is ready in the project and Helmet exposes
+it at runtime. Static absolute Open Graph/Twitter image tags must still be
+added after the production domain is confirmed; until then, live link-unfurl
+support is not claimed.
+
+The intro runs for four seconds on the first visit in a browser session, keeps
+the full website mounted underneath, then restores scrolling and interaction.
+Visitors who prefer reduced motion receive a brief static version instead.
 
 ## Production Build
 
