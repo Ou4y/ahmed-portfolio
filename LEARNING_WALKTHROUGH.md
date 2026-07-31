@@ -315,11 +315,11 @@ The object keys describe the CSS-like values Motion interpolates. Small distance
 
 `feat: build animated hero section`
 
-## Phase 6 — Add About, Expertise, and Experience
+## Phase 6 — Add About, Practice Areas, and Experience
 
 **1. What was built**
 
-The editorial About section, six expertise records, and the IBS experience highlight.
+The editorial About section, four approved practice-area records with detailed service lists, and the IBS experience highlight.
 
 **2. Why it exists**
 
@@ -327,17 +327,22 @@ These sections move from identity to evidence: the background, service areas, an
 
 **3. React concepts**
 
-Expertise is data-driven. The component maps the selected language’s array and derives the correct icon, number, heading, and description.
+Practice areas are data-driven. The component maps the selected language’s array and derives the correct icon, number, heading, description, and service list.
 
 **4. Syntax**
 
 ```jsx
-const Icon = icons[item.icon]
+const Icon = icons[area.icon]
 
 return (
-  <article key={item.id}>
+  <article key={area.id}>
     <Icon aria-hidden="true" />
-    <h3>{item.title}</h3>
+    <h3>{area.title}</h3>
+    <ul>
+      {area.services.map((service) => (
+        <li key={service}>{service}</li>
+      ))}
+    </ul>
   </article>
 )
 ```
@@ -353,18 +358,111 @@ The icon map turns a serializable string into a React component. `Icon` is capit
 
 **6. Common beginner mistakes**
 
-- Repeating six cards manually.
+- Repeating four cards and their service lists manually.
 - Inventing metrics to fill empty visual space.
 - Mixing content decisions deep into styling logic.
 - Using the list index as the only identity.
 
 **7. Main files**
 
-`src/components/sections/About.jsx`, `Expertise.jsx`, `Experience.jsx`, and `src/data/expertise.js`.
+`src/components/sections/About.jsx`, `PracticeAreas.jsx`, `Experience.jsx`, and `src/data/practiceAreas.js`.
 
 **8. Commit**
 
 `feat: add about expertise and experience sections`
+
+## Updating Client Content and Bilingual Practice Areas
+
+The client-approved update changed the professional positioning, biography, practice areas, IBS experience copy, CTAs, and search metadata. The implementation was structured so content changes remain separate from layout behavior.
+
+### Where the client content lives
+
+Shared interface copy lives in `src/data/translations.js`. This includes:
+
+- hero positioning and CTAs;
+- the three About paragraphs;
+- section headings and supporting descriptions;
+- trust badges;
+- IBS experience copy;
+- footer positioning;
+- language-aware SEO titles and descriptions.
+
+The longer practice-area records live in `src/data/practiceAreas.js`. Each language has the same four stable records:
+
+```js
+{
+  id: 'commercial-contracts',
+  icon: 'contract',
+  title: 'Commercial Contracts',
+  description: '...',
+  services: ['...', '...'],
+}
+```
+
+This keeps client content review focused. A wording change normally belongs in a data file, while spacing, accessibility, and responsive behavior remain in the component.
+
+### How the translation object works
+
+`useLanguage` selects either `translations.en` or `translations.ar` and exposes that selected object as `t`. Components do not contain separate English and Arabic markup:
+
+```jsx
+<SectionTitle
+  eyebrow={t.practiceAreas.eyebrow}
+  title={t.practiceAreas.title}
+/>
+```
+
+Changing the language changes `t`, React renders the new strings, and the language hook updates the document to `lang="en" dir="ltr"` or `lang="ar" dir="rtl"`. Logical spacing utilities such as `start`, `end`, `ps`, and `pe` let the same layout follow both directions naturally.
+
+### Why the practice areas are data-driven
+
+Hardcoding four large cards would duplicate the same JSX structure and make future content updates error-prone. Data-driven rendering provides one accessible card template:
+
+```jsx
+{practiceAreas[language].map((area) => (
+  <article key={area.id}>
+    <h3>{area.title}</h3>
+    <p>{area.description}</p>
+    <ul>
+      {area.services.map((service) => (
+        <li key={service}>{service}</li>
+      ))}
+    </ul>
+  </article>
+))}
+```
+
+The outer `.map()` renders the four practice areas. The inner `.map()` renders each service as a semantic list item.
+
+Every practice area needs a stable `id` because React uses it to preserve the correct element identity between renders. The English and Arabic datasets deliberately share the same IDs, so switching languages changes the content without changing the conceptual records.
+
+### Keeping long legal service lists readable
+
+Commercial Contracts has nine services, so four narrow desktop columns would make the text cramped. The section uses:
+
+- one card per row on mobile;
+- two cards per row from tablet widths upward;
+- one-column service lists at smaller card widths;
+- two-column service lists only on wide desktop screens;
+- generous internal spacing, visible grouping, and restrained hover lift;
+- semantic `<ul>` and `<li>` elements with small gold check markers.
+
+This preserves scanning comfort in English and in Arabic, where some legal terms require longer lines.
+
+### Files updated for the approved content
+
+- `src/data/translations.js`
+- `src/data/practiceAreas.js`
+- `src/components/sections/Hero.jsx`
+- `src/components/sections/About.jsx`
+- `src/components/sections/PracticeAreas.jsx`
+- `src/components/sections/Experience.jsx` through translated content
+- `src/App.jsx`
+- `index.html`
+- `README.md`
+- `LEARNING_WALKTHROUGH.md`
+
+The previous `src/data/expertise.js` and `Expertise.jsx` files were replaced so the source now reflects the client’s terminology and contains only the four approved practice areas.
 
 ## Phase 7 — Add Process, Insights, and FAQ
 

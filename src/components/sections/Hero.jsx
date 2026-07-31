@@ -142,13 +142,13 @@ function Hero({ t }) {
 
         <motion.div
           animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          className="grid border-t border-white/12 sm:grid-cols-3"
+          className="grid border-t border-white/12 sm:grid-cols-2 lg:grid-cols-4"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
           transition={{ duration: 0.55, delay: 0.65 }}
         >
           {t.hero.trustItems.map((item, index) => (
             <div
-              className="flex min-h-20 items-center gap-4 border-b border-white/10 py-4 last:border-b-0 sm:border-e sm:border-b-0 sm:px-6 sm:first:ps-0 sm:last:border-e-0"
+              className="flex min-h-20 items-center gap-4 border-b border-white/10 py-4 last:border-b-0 sm:border-e sm:px-6 sm:[&:nth-child(even)]:border-e-0 sm:[&:nth-last-child(-n+2)]:border-b-0 sm:first:ps-0 lg:border-e lg:border-b-0 lg:[&:nth-child(even)]:border-e lg:last:border-e-0"
               key={item}
             >
               <span className="font-display text-2xl text-gold/75">

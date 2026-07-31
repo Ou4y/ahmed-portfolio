@@ -40,19 +40,28 @@ function About({ t }) {
           <div>
             <Reveal>
               <SectionTitle
-                description={t.about.description}
                 eyebrow={t.about.eyebrow}
                 title={t.about.title}
               />
             </Reveal>
 
-            <Reveal delay={0.08}>
-              <blockquote className="mt-9 border-s-2 border-gold ps-6 font-display text-2xl leading-snug font-medium text-navy sm:text-3xl">
-                “{t.about.statement}”
-              </blockquote>
-            </Reveal>
+            <div className="mt-7 space-y-5">
+              {t.about.paragraphs.map((paragraph, index) => (
+                <Reveal delay={index * 0.055} key={paragraph}>
+                  <p
+                    className={`text-pretty text-base leading-8 sm:text-[1.05rem] ${
+                      index === t.about.paragraphs.length - 1
+                        ? 'border-s-2 border-gold ps-6 font-semibold text-navy'
+                        : 'text-muted'
+                    }`}
+                  >
+                    {paragraph}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
 
-            <div className="mt-12 border-y border-line">
+            <div className="mt-10 border-y border-line">
               {details.map((detail, index) => (
                 <Reveal
                   className="grid gap-2 border-b border-line py-5 last:border-b-0 sm:grid-cols-[0.8fr_1.2fr] sm:items-center"

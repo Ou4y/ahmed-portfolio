@@ -1,8 +1,8 @@
 # Ahmed Raafat — Corporate Lawyer Portfolio
 
-A premium, bilingual single-page portfolio for Ahmed Raafat, an Egyptian corporate lawyer with 10 years of experience in the legal field and corporate legal practice with IBS.
+A premium, bilingual single-page portfolio for Ahmed Raafat, a Corporate Lawyer and Legal Adviser with 10 years of experience in the legal field and corporate legal practice with IBS.
 
-The site is a fully static React frontend. It is designed for individuals, entrepreneurs, and businesses looking for clear corporate and business-focused legal guidance in Egypt.
+The site is a fully static React frontend. It presents strategic legal support for businesses, startups, investors, and multinational companies operating within the Egyptian commercial and corporate legal environment.
 
 ## Features
 
@@ -15,7 +15,7 @@ The site is a fully static React frontend. It is designed for individuals, entre
 - Supplied professional portrait of Ahmed Raafat
 - Custom legal line art and a navy, cream, and gold design system
 - Restrained Motion animations with reduced-motion support
-- Data-driven expertise, process, insight, and FAQ content
+- Data-driven practice areas, process, insight, and FAQ content
 - Keyboard-accessible mobile menu and FAQ accordion
 - Language-aware title and metadata
 - Static WhatsApp, telephone, and email integration when verified details are configured
@@ -25,7 +25,7 @@ The site is a fully static React frontend. It is designed for individuals, entre
 
 1. Hero
 2. About
-3. Expertise
+3. Practice areas
 4. Experience highlight
 5. Consultation process
 6. Legal insights
@@ -108,6 +108,8 @@ Keep future changes in this one configuration object. The contact section automa
 ## Language and RTL Support
 
 The lightweight translation system lives in `src/data/translations.js`. Data-heavy collections use matching English and Arabic records in the other files under `src/data/`.
+
+The four approved bilingual practice areas and their service lists live in `src/data/practiceAreas.js`, separate from the component that renders them.
 
 `useLanguage`:
 

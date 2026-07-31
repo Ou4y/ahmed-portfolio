@@ -10,7 +10,7 @@ const translations = {
     nav: {
       home: 'Home',
       about: 'About',
-      expertise: 'Expertise',
+      expertise: 'Practice Areas',
       process: 'Process',
       insights: 'Insights',
       contact: 'Contact',
@@ -20,53 +20,56 @@ const translations = {
       consultation: 'Book a consultation',
     },
     hero: {
-      eyebrow: 'Business-aware legal guidance',
+      eyebrow: 'Corporate Legal Adviser in Egypt',
       title: 'Ahmed Raafat',
-      role: 'Corporate Lawyer & Legal Consultant',
+      role: 'Corporate Lawyer & Legal Adviser',
       description:
-        'Professional legal guidance for businesses and individuals, backed by 10 years of experience in the legal field and corporate legal practice with IBS.',
+        'Strategic legal solutions for businesses, startups, investors, and multinational companies, backed by expertise in Egyptian commercial and corporate law.',
       primaryCta: 'Book a Consultation',
-      secondaryCta: 'Explore Expertise',
-      imageAlt: 'Ahmed Raafat, Corporate Lawyer',
+      secondaryCta: 'Explore Practice Areas',
+      imageAlt: 'Ahmed Raafat, Corporate Lawyer and Legal Adviser',
       portraitLabel: 'Professional profile',
       experienceNumber: '10',
       experienceLabel: 'years in the legal field',
       trustItems: [
-        '10 Years Experience',
-        'Corporate Legal Practice',
-        'Business-Focused Advice',
+        '10 Years Legal Experience',
+        'Corporate & Commercial Law',
+        'Legal Adviser for Businesses',
+        'Corporate Lawyer for IBS',
       ],
     },
     about: {
       eyebrow: 'About',
-      title: 'Clear legal thinking for confident decisions.',
-      description:
-        'Ahmed Raafat is a corporate lawyer with 10 years of experience in the legal field. His practice focuses on providing clear, practical, and business-aware legal support for companies, entrepreneurs, and individuals who need professional legal guidance.',
-      statement:
-        'Legal guidance should make complex decisions clearer, not add more uncertainty.',
+      title: 'Strategic legal support for businesses and investors.',
+      paragraphs: [
+        'Corporate Lawyer and Legal Adviser with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
+        'Experienced in company formation, corporate governance, commercial contracts, mergers and acquisitions, legal due diligence, labor law compliance, regulatory matters, dispute prevention, and risk management.',
+        'Committed to delivering practical legal advice that supports business growth while ensuring compliance with Egyptian laws and international best practices.',
+      ],
       yearsLabel: 'Years of legal experience',
-      roleLabel: 'Corporate legal practice',
+      roleLabel: 'Professional experience',
       roleValue: 'Corporate Lawyer for IBS',
-      focusLabel: 'Practice focus',
-      focusValue: 'Companies, entrepreneurs & individuals',
+      focusLabel: 'Core expertise',
+      focusValue: 'Egyptian commercial & corporate law',
     },
-    expertise: {
-      eyebrow: 'Expertise',
-      title: 'Practical support across core business legal needs.',
+    practiceAreas: {
+      eyebrow: 'Practice Areas',
+      title: 'Corporate and commercial legal expertise.',
       description:
-        'Focused legal services designed to help clients understand obligations, manage risk, and move forward with greater clarity.',
+        'Focused legal support across corporate law, commercial contracts, investment law, and employment law in Egypt.',
       itemLabel: 'Practice area',
+      servicesLabel: 'Services include',
     },
     experience: {
       eyebrow: 'Experience highlight',
       title: 'Corporate Lawyer for IBS',
       description:
-        'With hands-on corporate legal experience, Ahmed supports business operations through contract review, legal consultation, documentation, and risk-aware decision-making.',
+        'Ahmed’s corporate legal practice includes experience supporting business operations, reviewing legal documents, advising on commercial matters, and helping businesses manage legal and regulatory risk.',
       points: [
-        'Contract and agreement review',
-        'Corporate legal consultation',
-        'Documentation support',
-        'Risk-aware decision support',
+        'Business operations support',
+        'Legal document review',
+        'Commercial legal advice',
+        'Legal and regulatory risk management',
       ],
       contextLabel: 'Professional context',
       contextValue: 'Corporate legal practice',
@@ -109,7 +112,7 @@ const translations = {
         'An initial message is for scheduling and context only. It does not create an attorney-client relationship.',
     },
     footer: {
-      role: 'Corporate Lawyer & Legal Consultant',
+      role: 'Corporate Lawyer & Legal Adviser',
       navigationLabel: 'Footer navigation',
       disclaimerTitle: 'Legal disclaimer',
       disclaimer:
@@ -118,9 +121,9 @@ const translations = {
       backToTop: 'Back to top',
     },
     seo: {
-      title: 'Ahmed Raafat | Corporate Lawyer & Legal Consultant',
+      title: 'Ahmed Raafat | Corporate Lawyer & Legal Adviser in Egypt',
       description:
-        'Corporate legal guidance for businesses and individuals in Egypt, backed by 10 years of experience in the legal field.',
+        'Ahmed Raafat is a Corporate Lawyer and Legal Adviser with expertise in Egyptian commercial and corporate law, providing strategic legal solutions to businesses, startups, investors, and multinational companies.',
     },
   },
   ar: {
@@ -134,7 +137,7 @@ const translations = {
     nav: {
       home: 'الرئيسية',
       about: 'نبذة',
-      expertise: 'الخبرات',
+      expertise: 'مجالات الممارسة',
       process: 'خطوات الاستشارة',
       insights: 'رؤى قانونية',
       contact: 'تواصل',
@@ -144,53 +147,56 @@ const translations = {
       consultation: 'احجز استشارة',
     },
     hero: {
-      eyebrow: 'إرشاد قانوني يراعي طبيعة الأعمال',
+      eyebrow: 'مستشار قانوني للشركات في مصر',
       title: 'أحمد رأفت',
       role: 'محامٍ ومستشار قانوني للشركات',
       description:
-        'إرشاد قانوني مهني للأفراد والشركات، مدعوم بخبرة 10 سنوات في المجال القانوني وخبرة عملية كمحامٍ شركات لدى IBS.',
+        'حلول قانونية استراتيجية للشركات، والشركات الناشئة، والمستثمرين، والشركات متعددة الجنسيات، مدعومة بخبرة في القانون التجاري وقانون الشركات المصري.',
       primaryCta: 'احجز استشارة',
-      secondaryCta: 'تعرف على الخبرات',
-      imageAlt: 'أحمد رأفت، محامي شركات',
+      secondaryCta: 'تعرّف على مجالات الخبرة',
+      imageAlt: 'أحمد رأفت، محامٍ ومستشار قانوني للشركات',
       portraitLabel: 'الملف المهني',
       experienceNumber: '10',
       experienceLabel: 'سنوات في المجال القانوني',
       trustItems: [
-        '10 سنوات خبرة',
-        'خبرة قانونية للشركات',
-        'استشارات عملية للأعمال',
+        '10 سنوات خبرة قانونية',
+        'قانون الشركات والعقود التجارية',
+        'مستشار قانوني للأعمال',
+        'محامٍ شركات لدى IBS',
       ],
     },
     about: {
       eyebrow: 'نبذة',
-      title: 'رؤية قانونية واضحة لقرارات أكثر ثقة.',
-      description:
-        'أحمد رأفت محامٍ متخصص في المجال القانوني للشركات، يمتلك خبرة 10 سنوات في تقديم الدعم والاستشارات القانونية. يركز عمله على تقديم إرشاد قانوني واضح وعملي يساعد الشركات ورواد الأعمال والأفراد على اتخاذ قرارات أكثر أمانًا ووعيًا من الناحية القانونية.',
-      statement:
-        'دور الإرشاد القانوني هو توضيح القرارات المعقدة، لا إضافة مزيد من الغموض.',
+      title: 'دعم قانوني استراتيجي للشركات والمستثمرين.',
+      paragraphs: [
+        'محامٍ ومستشار قانوني متخصص في القانون التجاري وقانون الشركات المصري، يقدم حلولًا قانونية استراتيجية للشركات، والشركات الناشئة، والمستثمرين، والشركات متعددة الجنسيات.',
+        'يمتلك خبرة في تأسيس الشركات، والحوكمة المؤسسية، والعقود التجارية، وعمليات الاندماج والاستحواذ، والفحص القانوني النافي للجهالة، والامتثال لقوانين العمل، والمسائل التنظيمية، والوقاية من النزاعات، وإدارة المخاطر.',
+        'ملتزم بتقديم استشارات قانونية عملية تدعم نمو الأعمال مع ضمان الالتزام بالقوانين المصرية وأفضل الممارسات الدولية.',
+      ],
       yearsLabel: 'سنوات الخبرة القانونية',
-      roleLabel: 'الخبرة القانونية للشركات',
+      roleLabel: 'الخبرة المهنية',
       roleValue: 'محامٍ شركات لدى IBS',
-      focusLabel: 'نطاق الاهتمام',
-      focusValue: 'الشركات ورواد الأعمال والأفراد',
+      focusLabel: 'مجال التخصص',
+      focusValue: 'القانون التجاري وقانون الشركات المصري',
     },
-    expertise: {
-      eyebrow: 'الخبرات',
-      title: 'دعم عملي للاحتياجات القانونية الأساسية للأعمال.',
+    practiceAreas: {
+      eyebrow: 'مجالات الممارسة',
+      title: 'خبرة قانونية في قانون الشركات والعقود التجارية.',
       description:
-        'خدمات قانونية تركز على مساعدة العملاء في فهم الالتزامات وإدارة المخاطر واتخاذ الخطوات التالية بوضوح أكبر.',
+        'دعم قانوني متخصص في قانون الشركات والعقود التجارية والاستثمار والعمل في مصر.',
       itemLabel: 'مجال خبرة',
+      servicesLabel: 'تشمل الخدمات',
     },
     experience: {
       eyebrow: 'خبرة مهنية',
       title: 'محامٍ شركات لدى IBS',
       description:
-        'من خلال خبرته العملية في المجال القانوني للشركات، يقدم أحمد الدعم في مراجعة العقود، والاستشارات القانونية، وإعداد المستندات، وتقييم المخاطر القانونية المرتبطة بالقرارات التجارية.',
+        'تشمل خبرة أحمد القانونية في مجال الشركات دعم العمليات التجارية، ومراجعة المستندات القانونية، وتقديم الاستشارات في المسائل التجارية، ومساعدة الشركات على إدارة المخاطر القانونية والتنظيمية.',
       points: [
-        'مراجعة العقود والاتفاقيات',
-        'الاستشارات القانونية للشركات',
-        'دعم إعداد المستندات',
-        'دعم القرارات مع مراعاة المخاطر',
+        'دعم العمليات التجارية',
+        'مراجعة المستندات القانونية',
+        'الاستشارات في المسائل التجارية',
+        'إدارة المخاطر القانونية والتنظيمية',
       ],
       contextLabel: 'السياق المهني',
       contextValue: 'خبرة قانونية للشركات',
@@ -241,9 +247,9 @@ const translations = {
       backToTop: 'العودة إلى الأعلى',
     },
     seo: {
-      title: 'أحمد رأفت | محامٍ ومستشار قانوني للشركات',
+      title: 'أحمد رأفت | محامٍ ومستشار قانوني للشركات في مصر',
       description:
-        'إرشاد قانوني للشركات والأفراد في مصر، مدعوم بخبرة 10 سنوات في المجال القانوني.',
+        'أحمد رأفت محامٍ ومستشار قانوني متخصص في القانون التجاري وقانون الشركات المصري، يقدم حلولًا قانونية استراتيجية للشركات والمستثمرين والشركات الناشئة.',
     },
   },
 }
