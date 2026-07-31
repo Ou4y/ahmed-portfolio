@@ -35,7 +35,7 @@ const translations = {
         '10 Years Legal Experience',
         'Corporate & Commercial Law',
         'Legal Adviser for Businesses',
-        'Corporate Lawyer for IBS',
+        'Corporate Lawyer & Legal Adviser',
       ],
     },
     about: {
@@ -48,7 +48,7 @@ const translations = {
       ],
       yearsLabel: 'Years of legal experience',
       roleLabel: 'Professional experience',
-      roleValue: 'Corporate Lawyer for IBS',
+      roleValue: 'Corporate Lawyer & Legal Adviser',
       focusLabel: 'Core expertise',
       focusValue: 'Egyptian commercial & corporate law',
     },
@@ -62,7 +62,7 @@ const translations = {
     },
     experience: {
       eyebrow: 'Experience highlight',
-      title: 'Corporate Lawyer for IBS',
+      title: 'Corporate Lawyer & Legal Adviser',
       description:
         'Ahmed’s corporate legal practice includes experience supporting business operations, reviewing legal documents, advising on commercial matters, and helping businesses manage legal and regulatory risk.',
       points: [
@@ -162,7 +162,7 @@ const translations = {
         '10 سنوات خبرة قانونية',
         'قانون الشركات والعقود التجارية',
         'مستشار قانوني للأعمال',
-        'محامٍ شركات لدى IBS',
+        'محامٍ ومستشار قانوني للشركات',
       ],
     },
     about: {
@@ -175,7 +175,7 @@ const translations = {
       ],
       yearsLabel: 'سنوات الخبرة القانونية',
       roleLabel: 'الخبرة المهنية',
-      roleValue: 'محامٍ شركات لدى IBS',
+      roleValue: 'محامٍ ومستشار قانوني للشركات',
       focusLabel: 'مجال التخصص',
       focusValue: 'القانون التجاري وقانون الشركات المصري',
     },
@@ -189,7 +189,7 @@ const translations = {
     },
     experience: {
       eyebrow: 'خبرة مهنية',
-      title: 'محامٍ شركات لدى IBS',
+      title: 'محامٍ ومستشار قانوني للشركات',
       description:
         'تشمل خبرة أحمد القانونية في مجال الشركات دعم العمليات التجارية، ومراجعة المستندات القانونية، وتقديم الاستشارات في المسائل التجارية، ومساعدة الشركات على إدارة المخاطر القانونية والتنظيمية.',
       points: [
