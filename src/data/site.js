@@ -10,8 +10,8 @@ export const navigationItems = [
 export const siteConfig = {
   portrait: '/images/ahmed-raafat.jpeg',
   contact: {
-    phone: '',
-    email: '',
-    whatsapp: '',
+    phone: '+20 106 214 2766',
+    email: 'Ahmedraafat69@gmail.com',
+    whatsapp: '+20 106 214 2766',
   },
 }

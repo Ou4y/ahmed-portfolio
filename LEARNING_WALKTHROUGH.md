@@ -613,12 +613,11 @@ The site has one page and uses hash links, so it does not need server-side routi
 
 Before the public launch:
 
-1. Add Ahmed’s verified phone, email, and WhatsApp details.
-2. Add the GitHub remote and push the existing `main` branch.
-3. Connect that repository to Cloudflare Pages.
-4. Confirm the production domain.
-5. Add a canonical URL and absolute social-preview image for that domain.
-6. Test every live contact link on a real phone.
-7. Ask Ahmed to review the Arabic and English legal wording before publication.
+1. Push the existing `main` branch to the configured GitHub repository.
+2. Connect that repository to Cloudflare Pages.
+3. Confirm the production domain.
+4. Add a canonical URL and absolute social-preview image for that domain.
+5. Test every verified contact link on a real phone.
+6. Ask Ahmed to review the Arabic and English legal wording before publication.
 
 Future features such as full articles, analytics, a booking provider, or a CMS should be added only after a real requirement justifies their complexity.

@@ -91,19 +91,19 @@ npm run check    # Run lint and the production build together
 npm run preview  # Preview the generated dist/ output locally
 ```
 
-## Configure Verified Contact Details
+## Contact Configuration
 
-The brief did not include Ahmed’s public phone number, email address, or WhatsApp number, so the project does not invent them. Add the verified values in `src/data/site.js`:
+Ahmed’s verified public phone, WhatsApp, and email details are centralized in `src/data/site.js`:
 
 ```js
 contact: {
-  phone: '+20 ...',
-  email: 'verified-address@example.com',
-  whatsapp: '+20 ...',
+  phone: '+20 106 214 2766',
+  email: 'Ahmedraafat69@gmail.com',
+  whatsapp: '+20 106 214 2766',
 },
 ```
 
-Use an international country code for WhatsApp. When values are present, the contact section automatically renders working `tel:`, `mailto:`, and `wa.me` links. The WhatsApp utility removes formatting characters and URL-encodes the bilingual prefilled message.
+Keep future changes in this one configuration object. The contact section automatically renders working `tel:`, `mailto:`, and `wa.me` links. The WhatsApp utility removes formatting characters and URL-encodes the bilingual prefilled message.
 
 ## Language and RTL Support
 
@@ -155,11 +155,10 @@ The `public/_headers` file is copied into the build and adds caching and baselin
 
 Before publishing:
 
-1. Add and verify the real contact details.
-2. Run `npm run check`.
-3. Confirm the production domain.
-4. Add the final canonical URL and absolute social-preview image URL when the domain is known.
-5. Test English, Arabic, all contact links, and the legal disclaimer on the deployed URL.
+1. Run `npm run check`.
+2. Confirm the production domain.
+3. Add the final canonical URL and absolute social-preview image URL when the domain is known.
+4. Test English, Arabic, all verified contact links, and the legal disclaimer on the deployed URL.
 
 ## Content Integrity
 
