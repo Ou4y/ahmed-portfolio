@@ -128,7 +128,7 @@ function SignatureIntro({ language, t }) {
               },
             }}
           >
-            <SignatureLogo priority tone="light" variant="mark" />
+            <SignatureLogo priority tone="light" variant="threeDMark" />
           </motion.div>
 
           <motion.p

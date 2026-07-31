@@ -3,13 +3,18 @@ import { siteConfig } from '../../data/site.js'
 const logoVariants = {
   mark: {
     height: 451,
-    src: siteConfig.signature.threeDMark,
+    src: siteConfig.signature.whiteMark,
     width: 1432,
   },
   full: {
     height: 688,
-    src: siteConfig.signature.threeD,
+    src: siteConfig.signature.white,
     width: 1448,
+  },
+  threeDMark: {
+    height: 451,
+    src: siteConfig.signature.threeDMark,
+    width: 1432,
   },
   transparent: {
     height: 685,

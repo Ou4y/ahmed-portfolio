@@ -15,6 +15,8 @@ export const siteConfig = {
     mark: '/images/sign-ahmed-mark.png',
     threeD: '/images/sign-ahmed-3d.png',
     threeDMark: '/images/sign-ahmed-3d-mark.png',
+    white: '/images/sign-ahmed-white.png',
+    whiteMark: '/images/sign-ahmed-white-mark.png',
     vectorStyle: '/images/sign-ahmed-vector.svg',
   },
   socialImage: '/images/ahmed-raafat-og.png',

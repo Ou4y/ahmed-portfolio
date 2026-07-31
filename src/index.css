@@ -143,8 +143,8 @@
 
   .signature-logo--dark img {
     filter:
-      drop-shadow(0 0 0.75px rgb(248 245 239 / 88%))
-      drop-shadow(0 4px 10px rgb(201 162 39 / 22%));
+      drop-shadow(0 2px 1px rgb(7 24 39 / 48%))
+      drop-shadow(0 4px 12px rgb(201 162 39 / 20%));
   }
 
   .signature-logo--light img {

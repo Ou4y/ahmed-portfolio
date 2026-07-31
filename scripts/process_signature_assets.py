@@ -122,6 +122,39 @@ def extract_signature_mark(image: Image.Image) -> Image.Image:
     return trim_with_padding(image.crop((0, 0, image.width, split_row)))
 
 
+def create_white_gold_variant(image: Image.Image) -> Image.Image:
+    """Recolor dark ink to white while preserving approved gold artwork."""
+
+    rgba = np.asarray(image.convert("RGBA")).copy()
+    red = rgba[:, :, 0].astype(np.float32)
+    green = rgba[:, :, 1].astype(np.float32)
+    blue = rgba[:, :, 2].astype(np.float32)
+    visible = rgba[:, :, 3] > 0
+
+    gold_seed = (
+        visible
+        & (red > 60)
+        & (red > blue * 1.35)
+        & (green > blue * 1.15)
+        & (red > green * 1.03)
+    )
+    gold_region = (
+        np.asarray(
+            Image.fromarray((gold_seed * 255).astype(np.uint8)).filter(
+                ImageFilter.MaxFilter(7)
+            )
+        )
+        > 0
+    )
+
+    white_region = visible & ~gold_region
+    rgba[white_region, 0] = 255
+    rgba[white_region, 1] = 255
+    rgba[white_region, 2] = 255
+    rgba[~visible, :3] = 0
+    return Image.fromarray(rgba, mode="RGBA")
+
+
 def save_png(image: Image.Image, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     image.save(destination, format="PNG", optimize=True)
@@ -237,12 +270,16 @@ def main() -> None:
     three_d_source = Image.open(args.three_d_alpha).convert("RGBA")
     three_d_full = trim_with_padding(three_d_source, padding=32)
     three_d_mark = extract_signature_mark(three_d_source)
+    white_full = create_white_gold_variant(three_d_full)
+    white_mark = create_white_gold_variant(three_d_mark)
 
     outputs = {
         "sign-ahmed-transparent.png": transparent_full,
         "sign-ahmed-mark.png": transparent_mark,
         "sign-ahmed-3d.png": three_d_full,
         "sign-ahmed-3d-mark.png": three_d_mark,
+        "sign-ahmed-white.png": white_full,
+        "sign-ahmed-white-mark.png": white_mark,
     }
     for filename, image in outputs.items():
         validate_alpha_edges(image, filename)

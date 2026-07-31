@@ -149,12 +149,16 @@ public/images/sign-ahmed-transparent.png
 public/images/sign-ahmed-mark.png
 public/images/sign-ahmed-3d.png
 public/images/sign-ahmed-3d-mark.png
+public/images/sign-ahmed-white.png
+public/images/sign-ahmed-white-mark.png
 public/images/sign-ahmed-vector.svg
 public/images/ahmed-raafat-og.png
 ```
 
 The transparent PNG is the faithful master for light backgrounds. The 3D files
-add restrained metallic depth and edge contrast for the navy brand surfaces.
+add restrained metallic depth for the cream intro and social card. The
+white-and-gold files preserve the approved geometry while providing strong
+contrast on the navy navbar, hero, and footer.
 The SVG is an explicitly hybrid, raster-backed filter treatment rather than a
 claimed hand-traced vector. `scripts/process_signature_assets.py` contains the
 repeatable deterministic matte-removal, trimming, SVG-wrapper, and social-card

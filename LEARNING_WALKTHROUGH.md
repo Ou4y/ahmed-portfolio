@@ -765,6 +765,8 @@ therefore exports two safe compositions:
 - `sign-ahmed-transparent.png` and `sign-ahmed-3d.png` retain the full lockup.
 - `sign-ahmed-mark.png` and `sign-ahmed-3d-mark.png` retain the handwritten
   name, sweeping underline, and legal scale icon for compact placements.
+- `sign-ahmed-white.png` and `sign-ahmed-white-mark.png` preserve the same
+  geometry while changing dark ink to white for navy website surfaces.
 
 The intro and navbar use the compact mark. The footer and social preview have
 enough space for the full lockup. The hero uses the compact mark as a subtle
